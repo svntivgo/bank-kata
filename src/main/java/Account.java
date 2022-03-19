@@ -19,6 +19,7 @@ public class Account {
 
     void printStatements() {
         TablePrinter printer = new TablePrinter();
+        printer.calcBalance(statement);
         printer.print(statement);
     }
 
