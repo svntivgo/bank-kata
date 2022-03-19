@@ -1,14 +1,18 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Statement {
     private BigDecimal amount;
     private LocalDate date;
-    private List<Account> accounts;
+    private List<Account> accounts = new ArrayList<>();
 
-    public void addStatement(Account account) {
+    public void addStatement(BigDecimal amount, LocalDate date) {
+        Account account = new Account(new Statement());
+        account.amount = amount;
+        account.date = date;
         this.accounts.add(account);
-        System.out.println(accounts);
+        accounts.stream().forEach(x -> System.out.println(x.amount +" "+ x.date));
     }
 }

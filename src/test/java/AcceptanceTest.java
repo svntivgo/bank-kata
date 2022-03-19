@@ -9,11 +9,11 @@ import java.util.Currency;
 import java.util.Date;
 
 public class AcceptanceTest {
-    private BigDecimal amountOf(int number) {
+    public BigDecimal amountOf(int number) {
         return BigDecimal.valueOf(number);
     }
 
-    private LocalDate date(String dateOnString) {
+    public LocalDate date(String dateOnString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate parsedDate = LocalDate.parse(dateOnString, formatter);
         return parsedDate;
@@ -21,8 +21,8 @@ public class AcceptanceTest {
 
     @Test
     public void deposito() {
-        Account cuenta = new Account();
-        cuenta.deposit(amountOf(500), date("03/01/2020"));
+        Account cuenta = new Account(new Statement());
+        cuenta.deposit(amountOf( 500), date("03/01/2020"));
         cuenta.withdraw(amountOf(500), date("03/01/2020"));
     }
 
