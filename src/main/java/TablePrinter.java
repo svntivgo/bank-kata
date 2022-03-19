@@ -39,11 +39,19 @@ public class TablePrinter {
             Account account = accounts.get(i);
             if (account.amount>0) {
                 System.out.format(sizeCell,
-                        account.date, account.amount, "", balance.get(i));
+                        account.date,
+                        account.amount,
+                        "",
+                        balance.get(i)
+                );
             }
             if (account.amount<0) {
                 System.out.format(sizeCell,
-                        account.date, "", account.amount, balance.get(i));
+                        account.date,
+                        "",
+                        account.amount,
+                        balance.get(i)
+                );
             }
             System.out.println();
 
