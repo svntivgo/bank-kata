@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class TablePrinter {
     Double total = 0.0;
 

@@ -18,11 +18,6 @@ public class Account {
     }
 
     void printStatements() {
-//        statement.getAccounts()
-//                .forEach(x -> {
-//                    total = total + x.amount;
-//                    System.out.println(x.date+" "+ x.amount +" "+total);
-//                });
         TablePrinter printer = new TablePrinter();
         printer.print(statement);
     }
