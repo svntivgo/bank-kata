@@ -12,7 +12,7 @@ public class Account {
         System.out.println("Depositó un monto de: "+amount+", en la fecha: "+date);
     }
 
-    void withdraw(int amount, Instant date){
+    void withdraw(BigDecimal amount, LocalDate date){
         System.out.println("Retiró un monto de: "+amount+", en la fecha: "+date);
     }
 

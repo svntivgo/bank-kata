@@ -23,6 +23,7 @@ public class AcceptanceTest {
     public void deposito() {
         Account cuenta = new Account();
         cuenta.deposit(amountOf(500), date("03/01/2020"));
+        cuenta.withdraw(amountOf(500), date("03/01/2020"));
     }
 
 
