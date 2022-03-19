@@ -2,8 +2,6 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Date;
 import java.util.List;
 
 public class Account {
@@ -11,11 +9,11 @@ public class Account {
     LocalDate date;
 
     void deposit(BigDecimal amount, LocalDate date) {
-        System.out.println("Monto: "+amount+", fecha: "+date);
+        System.out.println("Depositó un monto de: "+amount+", en la fecha: "+date);
     }
 
     void withdraw(int amount, Instant date){
-
+        System.out.println("Retiró un monto de: "+amount+", en la fecha: "+date);
     }
 
     void printStatements() {
