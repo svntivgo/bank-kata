@@ -9,7 +9,9 @@ public class Statement {
         Account account = new Account(new Statement());
         account.amount = amount;
         account.date = date;
-        this.accounts.add(account);
+
+        this.accounts
+                .add(account);
     }
 
     public List<Account> getAccounts() {
