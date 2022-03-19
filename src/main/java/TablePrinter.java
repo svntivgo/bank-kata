@@ -7,6 +7,9 @@ public class TablePrinter {
     List<Double> balance = new ArrayList<>();
     Double partialBalance = 0.0;
 
+    String borderHorizontal = "-----------------------------------------------------------------------------";
+    String sizeCell = "%10s %10s %10s %10s";
+
     public TablePrinter() {
     }
 
@@ -27,24 +30,24 @@ public class TablePrinter {
 
         List<Account> accounts = statements.getAccounts();
 
-        System.out.println("-----------------------------------------------------------------------------");
-        System.out.printf("%10s %10s %10s %10s", "DATE", "CREDIT", "DEBIT", "BALANCE");
+        System.out.println(borderHorizontal);
+        System.out.printf(sizeCell, "DATE", "CREDIT", "DEBIT", "BALANCE");
         System.out.println();
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println(borderHorizontal);
         Collections.reverse(balance);
         for (int i = 0; i < accounts.size(); i++) {
             Account account = accounts.get(i);
             if (account.amount>0) {
-                System.out.format("%10s %10s %10s %10s",
-                        account.date, "", account.amount, balance.get(i));
+                System.out.format(sizeCell,
+                        account.date, account.amount, "", balance.get(i));
             }
             if (account.amount<0) {
-                System.out.format("%10s %10s %10s %10s",
-                        account.date, account.amount, "", balance.get(i));
+                System.out.format(sizeCell,
+                        account.date, "", account.amount, balance.get(i));
             }
             System.out.println();
 
         }
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println(borderHorizontal);
     }
 }
