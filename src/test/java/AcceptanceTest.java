@@ -11,13 +11,12 @@ import java.io.*;
 
 public class AcceptanceTest {
     public Double amountOf(int number) {
-        return Double.valueOf(number);
+        return (double) number;
     }
 
     public LocalDate date(String dateOnString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate parsedDate = LocalDate.parse(dateOnString, formatter);
-        return parsedDate;
+        return LocalDate.parse(dateOnString, formatter);
     }
 
     @Test

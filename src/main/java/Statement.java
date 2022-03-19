@@ -1,12 +1,9 @@
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Statement {
-    private Double amount;
-    private LocalDate date;
-    private List<Account> accounts = new ArrayList<>();
+    private final List<Account> accounts = new ArrayList<>();
 
     public void addStatement(Double amount, LocalDate date) {
         Account account = new Account(new Statement());

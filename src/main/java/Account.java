@@ -1,10 +1,4 @@
-import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.*;
 
 public class Account {
     Double amount;
@@ -26,7 +20,6 @@ public class Account {
 
     void printStatements() {
         statement.getAccounts()
-                .stream()
                 .forEach(x -> {
                     total = total + x.amount;
                     System.out.println(x.date+" "+ x.amount +" "+total);
