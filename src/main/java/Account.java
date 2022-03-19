@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 public class Account {
     BigDecimal amount;
@@ -25,7 +26,7 @@ public class Account {
     }
 
     void printStatements() {
-
+        statement.getAccounts().stream().forEach(x -> System.out.println(x.amount +" "+ x.date));
     }
 
 }

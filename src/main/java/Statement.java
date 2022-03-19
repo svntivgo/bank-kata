@@ -13,6 +13,9 @@ public class Statement {
         account.amount = amount;
         account.date = date;
         this.accounts.add(account);
-        accounts.stream().forEach(x -> System.out.println(x.amount +" "+ x.date));
+    }
+
+    public List<Account> getAccounts() {
+        return accounts;
     }
 }

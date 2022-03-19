@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Currency;
 import java.util.Date;
+import java.io.*;
 
 public class AcceptanceTest {
     public BigDecimal amountOf(int number) {
@@ -24,6 +25,8 @@ public class AcceptanceTest {
         Account cuenta = new Account(new Statement());
         cuenta.deposit(amountOf( 500), date("03/01/2020"));
         cuenta.withdraw(amountOf(500), date("03/01/2020"));
+
+        cuenta.printStatements();
     }
 
 
