@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class TablePrinter {
     Double total = 0.0;
 
@@ -5,6 +7,7 @@ public class TablePrinter {
     }
 
     void print(Statement statement){
+        statement.getAccounts().sort(Comparator.comparing(Account::getDate).reversed());
         System.out.println("-----------------------------------------------------------------------------");
         System.out.printf("%10s %10s %10s %10s", "DATE", "CREDIT", "DEBIT", "BALANCE");
         System.out.println();

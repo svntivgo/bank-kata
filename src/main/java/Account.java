@@ -22,4 +22,8 @@ public class Account {
         printer.print(statement);
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
 }

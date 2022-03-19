@@ -16,9 +16,9 @@ public class AcceptanceTest {
     @Test
     public void deposito() {
         Account cuenta = new Account(new Statement());
-        cuenta.deposit(amountOf( 1000), date("03/01/2020"));
-        cuenta.deposit(amountOf(2000), date("03/01/2020"));
-        cuenta.withdraw(amountOf(500), date("03/01/2020"));
+        cuenta.deposit(amountOf( 1000), date("10/01/2021"));
+        cuenta.deposit(amountOf(2000), date("13/01/2021"));
+        cuenta.withdraw(amountOf(500), date("14/01/2021"));
 
         cuenta.printStatements();
     }
