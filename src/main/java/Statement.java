@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Statement {
-    private BigDecimal amount;
+    private Double amount;
     private LocalDate date;
     private List<Account> accounts = new ArrayList<>();
 
-    public void addStatement(BigDecimal amount, LocalDate date) {
+    public void addStatement(Double amount, LocalDate date) {
         Account account = new Account(new Statement());
         account.amount = amount;
         account.date = date;

@@ -7,26 +7,31 @@ import java.util.List;
 import java.io.*;
 
 public class Account {
-    BigDecimal amount;
+    Double amount;
     LocalDate date;
     Statement statement;
+    Double total = 0.0;
 
     public Account(Statement statement) {
         this.statement = statement;
     }
 
-    void deposit(BigDecimal amount, LocalDate date) {
-        System.out.println("Depositó un monto de: "+amount+", en la fecha: "+date);
+    void deposit(Double amount, LocalDate date) {
         statement.addStatement(amount,date);
     }
 
-    void withdraw(BigDecimal amount, LocalDate date){
-        System.out.println("Retiró un monto de: "+amount.negate()+", en la fecha: "+date);
-        statement.addStatement(amount.negate(),date);
+    void withdraw(Double amount, LocalDate date){
+        statement.addStatement(-amount,date);
     }
 
     void printStatements() {
-        statement.getAccounts().stream().forEach(x -> System.out.println(x.amount +" "+ x.date));
+        statement.getAccounts()
+                .stream()
+                .forEach(x -> {
+                    total = total + x.amount;
+                    System.out.println(x.date+" "+ x.amount +" "+total);
+                });
+        System.out.println(total);
     }
 
 }

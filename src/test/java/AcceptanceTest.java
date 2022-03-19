@@ -10,8 +10,8 @@ import java.util.Date;
 import java.io.*;
 
 public class AcceptanceTest {
-    public BigDecimal amountOf(int number) {
-        return BigDecimal.valueOf(number);
+    public Double amountOf(int number) {
+        return Double.valueOf(number);
     }
 
     public LocalDate date(String dateOnString) {
@@ -25,6 +25,7 @@ public class AcceptanceTest {
         Account cuenta = new Account(new Statement());
         cuenta.deposit(amountOf( 500), date("03/01/2020"));
         cuenta.withdraw(amountOf(500), date("03/01/2020"));
+        cuenta.withdraw(amountOf(200), date("03/01/2020"));
 
         cuenta.printStatements();
     }
